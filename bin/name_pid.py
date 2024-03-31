@@ -1,6 +1,6 @@
-from psutil import process_iter
+from psutil import process_iter , net_connections ,Process
 
-def find(input_name):
+def name_find(input_name):
     input_name += ".exe"
     pid_list = []
     # 遍历系统中所有进程
@@ -14,3 +14,8 @@ def find(input_name):
             return pid_list
         except Exception:
             return None
+def port_find(port):
+    for conn in net_connections():
+        if conn.laddr.port == port:
+            return Process(conn.pid)
+    return None
