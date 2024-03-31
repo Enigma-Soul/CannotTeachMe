@@ -1,1 +1,1 @@
-import scapy
+print("Welcome to CannotTeachMe")
