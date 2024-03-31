@@ -1,10 +1,10 @@
-from os import kill
+from os import kill as oskill
 from psutil import Process
 
 # 用Os库执行
 def use_os(pid):
     try:
-        kill(pid,9)
+        oskill(pid,9)
         return True
     except Exception:
         return False
@@ -24,7 +24,7 @@ def die_or_not(pid):
     except Exception:
         return True
 # 运行
-def run(pid):
+def kill(pid):
     if not use_os(pid):
         if not use_process(pid):
             if  not die_or_not(pid):
