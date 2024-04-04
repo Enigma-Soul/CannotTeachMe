@@ -4,6 +4,7 @@ def is_or_not(string,pattern):
     return bool(match(pattern,string))
 def name_find(input_name):
     input_name += ".exe"
+    input_name = input_name.replace("?",".*")
     pid_list = []
     # 遍历系统中所有进程
     for process in process_iter(['pid', 'name']):
@@ -13,9 +14,9 @@ def name_find(input_name):
             # 如果进程名称与指定的进程名匹配，则返回对应的PID
             if is_or_not(name,input_name):
                 pid_list += [process.pid]
-            return pid_list
         except Exception:
-            return None
+            pass
+    return pid_list
 def port_find(port):
     pid_list = []
     for conn in net_connections():
