@@ -1,5 +1,7 @@
-from psutil import process_iter , net_connections ,Process
-
+from psutil import process_iter , net_connections
+from re import match
+def is_or_not(string,pattern):
+    return bool(match(pattern,string))
 def name_find(input_name):
     input_name += ".exe"
     pid_list = []
@@ -9,13 +11,18 @@ def name_find(input_name):
             # 获取进程的名称
             name = process.info['name']
             # 如果进程名称与指定的进程名匹配，则返回对应的PID
-            if name == input_name:
+            if is_or_not(name,input_name):
                 pid_list += [process.pid]
             return pid_list
         except Exception:
             return None
 def port_find(port):
+    pid_list = []
     for conn in net_connections():
         if conn.laddr.port == port:
-            return Process(conn.pid)
-    return None
+            pid_list += [conn.laddr]
+
+    if len(pid_list) == 0:
+        return None
+    else:
+        return pid_list

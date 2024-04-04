@@ -21,4 +21,9 @@ def get_blacklist():
         exe += json[x]["exe"]
     return ports , exe
 
+def main():
+    cmd = input(color("blue","/~ #"))
 
+
+if __name__ == '__main__':
+    main()
