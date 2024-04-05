@@ -27,4 +27,5 @@
 > * **```ports```使用端口的列表**
 ## 四,如何催更
 * <img alt="GitHub stars" src="https://img.shields.io/github/stars/Enigma-soul/CannotTeachMe?logo=github">
+![付款](https://github.com/Enigma-Soul/CannotTeachMe/assets/119654171/65579ba8-7f80-4304-9f31-1802b4648d82)
 
