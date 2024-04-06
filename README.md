@@ -14,7 +14,7 @@
 {
   "list" : ["红蜘蛛"],
   "红蜘蛛":{
-    "exe": ["RunCat_v1.9?"],
+    "exe": ["REDAgent"],
     "ports": []
   }
 }
