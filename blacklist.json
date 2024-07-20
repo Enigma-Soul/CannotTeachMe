@@ -1,5 +1,4 @@
 {
-  "list" : ["红蜘蛛"],
   "红蜘蛛":{
     "exe": ["REDAgent"],
     "ports": []
