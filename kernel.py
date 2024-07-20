@@ -4,7 +4,7 @@ def get_blacklist():
     ports = []
     exe = []
     json = config.read("./blacklist.json")
-    for x in json["list"]:
+    for x in list(json.keys()):
         ports += json[x]["ports"]
         exe += json[x]["exe"]
     return ports , exe
